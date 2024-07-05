@@ -1,0 +1,21 @@
+Summary  Virtual memory in Linux
+---------------------------
+1. It gives a virtual feeling for each process, that it own the complete Physical memory(i.e RAM).
+2. It gives virtual feeling to each process, that it can have more memory than the available Physical memory.
+3. Physical memory is Real memory(It does exist)
+4. Virtual memory is a conceptual memory(It is only like a imaginary memory )
+5. CPU executes code/instruction from Physical memory(and not from virtual memory)
+6. Each process hold instructions/code, data, stack, heap in the imaginary Virtual memory, this data/instruction is copied to real memory(Physical memory) at time of execution.
+Page Table
+---------
+1. Each process has its own page table.
+2. When the Process copies data/instruction (contents of page memory) from virtual memory to Physical memory, it creates a entry of that particular Virtual memory's Page in 'page table'.
+3. This Page table entry will inform CPU whether, the required data from each process's virtual memory is present in Physical RAM or not.
+4. The Page in Physical memory can be swapped in/out from/to secondary memory(like hard disk or equivalent).
+5. When page from Physical memory is copied to secondary memory, the Page table entry of that particular page is deleted, similarly, when page data is copied from secondary memory back to physical memory, a entry in page table is made for that particular page.
+
+NOTE: Physical memory refers to RAM memory
+
+What is Page Fault?
+Page fault is kind of indication informing system that the required page of memory was not present on the corresponding Process's 'Page table', and this page of memory needs to be copied on to Physical memory for further instruction/data processing.
+Note: Page Fault occurs for a "running Process" when its required page is not present in Physical memory.
